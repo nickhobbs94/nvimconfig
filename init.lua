@@ -1,7 +1,6 @@
 require("options")
 require("plugins")
 
-
 function Markdown()
     vim.opt_local.wrap = true           -- Enable line wrapping for this buffer
     vim.opt_local.spell = true

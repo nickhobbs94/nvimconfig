@@ -47,10 +47,18 @@ function ExecIt()
   vim.cmd("r!"..name)
 end
 
+function GetDateHeader()
+  --vim.cmd("r!echo \"## $(date -I) $(date +%A)\"")
+  vim.cmd([[r!echo "\#\# $(date -I) $(date +\%A)"]])
+end
+
 vim.keymap.set("n", "<leader>r", ExecIt, {desc="Input output from terminal program"})
+
+vim.keymap.set("n", "<leader>t", GetDateHeader);
 
 vim.keymap.set("n", "<leader>o", "<C-]>", {desc="Go to definition"})
 
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<CR>", {desc="Telescope old files"})
 
 vim.keymap.set("n", "<leader>c", "<cmd>cd %:h<CR>", {desc="cd to current file's directory"})
+
