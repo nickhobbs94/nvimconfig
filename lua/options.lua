@@ -16,7 +16,8 @@ vim.opt.shiftwidth = 2
 vim.opt.clipboard = "unnamedplus"
 
 -- keep the cursor in the middle of the screen when scrolling
-vim.opt.scrolloff = 999
+--vim.opt.scrolloff = 999
+-- I've disabled this because you can just press `zz`
 
 -- misc
 vim.opt.virtualedit = "block"
@@ -52,6 +53,8 @@ function GetDateHeader()
   vim.cmd([[r!echo "\#\# $(date -I) $(date +\%A)"]])
 end
 
+vim.api.nvim_create_user_command('DateHeader', GetDateHeader, {})
+
 vim.keymap.set("n", "<leader>r", ExecIt, {desc="Input output from terminal program"})
 
 vim.keymap.set("n", "<leader>t", GetDateHeader);
@@ -61,4 +64,8 @@ vim.keymap.set("n", "<leader>o", "<C-]>", {desc="Go to definition"})
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<CR>", {desc="Telescope old files"})
 
 vim.keymap.set("n", "<leader>c", "<cmd>cd %:h<CR>", {desc="cd to current file's directory"})
+
+-- swap : and ;
+vim.keymap.set("n", ";", ":", {desc=""})
+vim.keymap.set("n", ":", ";", {desc=""})
 
