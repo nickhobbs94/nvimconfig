@@ -6,7 +6,7 @@ function Markdown()
     vim.opt_local.spell = true
     vim.opt_local.linebreak = true      -- Break lines at word boundaries
     vim.opt_local.textwidth = 0         -- Disable hard text wrapping
-    vim.opt_local.colorcolumn = "80"    -- Show a guide at 80 characters (optional) flkajsdhfklajshdfkajhsdfkljahsdlkfjahsdklfjhaskldjfhaklsjdhfklajsdhflkajsdhfklajsdhflkajsdhf
+    vim.opt_local.colorcolumn = "80"    -- Show a guide at 80 characters (optional)
 
     -- Buffer-local key mappings
     vim.keymap.set(
