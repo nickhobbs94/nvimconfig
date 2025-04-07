@@ -158,7 +158,14 @@ require("lazy").setup({
     end
   },
   { "williamboman/mason-lspconfig.nvim", },
-  { "neovim/nvim-lspconfig", },
+  { 
+    "neovim/nvim-lspconfig",
+    init = function()
+      local lspconfig = require('lspconfig')
+      lspconfig.ts_ls.setup {}
+      vim.keymap.set('n', '<leader>u', ':lua require("telescope.builtin").lsp_references()<CR>', { noremap = true, silent = true })
+    end,
+  },
   {
     "kylechui/nvim-surround",
     tag = "*",
