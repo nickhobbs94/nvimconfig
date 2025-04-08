@@ -25,14 +25,16 @@ function Markdown()
     require('wrapping').soft_wrap_mode() -- Enable soft wrapping mode
 end
 
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "*",
-    callback = function()
-      if vim.bo.filetype == "markdown" then
-        Markdown()
-      else
-        vim.opt_local.wrap = false
-      end
-    end,
-})
+vim.api.nvim_create_user_command('Markdown', Markdown, {})
+
+--vim.api.nvim_create_autocmd("FileType", {
+--    pattern = "*",
+--    callback = function()
+--      if vim.bo.filetype == "markdown" then
+--        Markdown()
+--      else
+--        vim.opt_local.wrap = false
+--      end
+--    end,
+--})
 
