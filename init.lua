@@ -27,6 +27,9 @@ end
 
 vim.api.nvim_create_user_command('Markdown', Markdown, {})
 
+vim.api.nvim_set_keymap('n', '<C-q>', ':q<CR>', { noremap = true, silent = true })
+
+
 --vim.api.nvim_create_autocmd("FileType", {
 --    pattern = "*",
 --    callback = function()
