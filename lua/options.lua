@@ -55,15 +55,18 @@ end
 
 vim.api.nvim_create_user_command('DateHeader', GetDateHeader, {})
 
-vim.keymap.set("n", "<leader>r", ExecIt, {desc="Input output from terminal program"})
+vim.keymap.set("n", "<leader>i", ExecIt, {desc="Input output from terminal program"})
 
-vim.keymap.set("n", "<leader>t", GetDateHeader);
+vim.keymap.set("n", "<leader>t", GetDateHeader, {desc="Get date header"});
 
 vim.keymap.set("n", "<leader>o", "<C-]>", {desc="Go to definition"})
 
 vim.keymap.set("n", "<leader>e", "<cmd>Telescope oldfiles<CR>", {desc="Telescope old files"})
+vim.keymap.set("n", "<leader>r", "<cmd>Telescope lsp_references<CR>", {desc="Telescope lsp references"})
+vim.keymap.set("n", "<leader>w", vim.diagnostic.open_float, {desc="Show warning float"})
 
 vim.keymap.set("n", "<leader>c", "<cmd>cd %:h<CR>", {desc="cd to current file's directory"})
+
 
 -- swap : and ;
 vim.keymap.set("n", ";", ":", {desc=""})

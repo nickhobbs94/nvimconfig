@@ -23,7 +23,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "typescript" },
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "typescript", "java" },
 
         auto_install = true,
 
@@ -153,7 +153,7 @@ require("lazy").setup({
       require('mason-lspconfig').setup()
       local lsp = require("lspconfig")
       lsp.marksman.setup {}
-      --lsp.java_language_server.setup {}
+      lsp.jdtls.setup {}
 
     end
   },
