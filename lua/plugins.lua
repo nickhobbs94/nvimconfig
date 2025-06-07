@@ -152,7 +152,7 @@ require("lazy").setup({
       require('mason').setup()
       require('mason-lspconfig').setup()
       local lsp = require("lspconfig")
-      lsp.marksman.setup {}
+      --lsp.marksman.setup {}
       --lsp.java_language_server.setup {}
 
     end
